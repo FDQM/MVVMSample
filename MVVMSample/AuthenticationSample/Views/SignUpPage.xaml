@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MVVMSample.SignUpPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="SignUP" FontSize="30" FontAttributes="Bold" 
+                       Grid.Row="0" />
+                
+
+                <Image Source="camara96.png"
+                   WidthRequest="120"
+                   HeightRequest="120"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                           Grid.Row="1"
+               />
+                <Entry Placeholder="Email address"
+                       Text="{Binding User.Email}"
+                    Margin="20"
+                    Grid.Row="2"
+                       x:Name="NewEmail"/>
+
+                <Entry Placeholder="Username"
+               Margin="20"
+                   Grid.Row="3"/>
+
+                <Grid Grid.Row="4">
+                    <Entry
+                        x:Name="NewPassword"
+                        Placeholder="Password"
+                        Text="{Binding NewUser.NewPassword }"
+                        IsPassword="True"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                            Margin="20"/>
+                    <Image 
+                      Grid.Row="0"
+                      Grid.Column="0"
+                      Source="mostrarcontrasena60.png"
+                      HorizontalOptions="End"
+                      VerticalOptions="Center"
+                      WidthRequest="30"
+                      HeightRequest="30"
+                      Margin="20"/>
+
+                </Grid>
+
+                <Grid Grid.Row="5">
+                    <Entry
+                        x:Name="RepeatNewPassword"
+                        Placeholder="Repeat Password"
+                        Text="{Binding NewUser.RepeatPassword}"
+                        IsPassword="True"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                            Margin="20"/>
+                    <Image 
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Source="mostrarcontrasena60.png"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        WidthRequest="30"
+                        HeightRequest="30"
+                                Margin="20"/>
+
+                </Grid>
+
+                <Button ImageSource="iccheck.png" Text="SIGN UP" 
+                    Margin="20" Grid.Row="6"
+                        Command="{Binding GoToMenuCommand}"/>
+
+                <Label Text="Terms of Service " VerticalOptions="Center" HorizontalOptions="Center"
+                   Grid.Row="7"/>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

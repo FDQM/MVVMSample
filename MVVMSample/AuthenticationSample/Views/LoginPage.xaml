@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MVVMSample.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                    <RowDefinition Height ="Auto"/>
+                </Grid.RowDefinitions>
+
+
+                <Label Text="Login" FontSize="30" FontAttributes="Bold" 
+                       Grid.Row="0" />
+
+                <Image Source="icons8usuario256.png"
+                   WidthRequest="150"
+                   HeightRequest="150"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Row="1"
+               />
+
+                <Entry Placeholder="Username or email address"
+                       Text="{Binding User.Email}"
+               Margin="30"
+               Grid.Row="2"
+               x:Name="EntryEmail"/>
+                
+                <Grid Grid.Row="3">
+                    <Entry
+                    Placeholder="Password"
+                        Text="{Binding User.Password}"
+                    d:Grid.Row="0"
+                    d:Grid.Column="0"
+                    x:Name="PasswordEntry"
+                    IsPassword="True"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                                Margin="30"/>
+                    <Image 
+                    d:Grid.Row="0"
+                    d:Grid.Column="0"
+                    x:Name="passwordEye"
+                    Source="mostrarcontrasena60.png"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                                Margin="30"/>
+                </Grid>
+
+                <Button ImageSource="iccheck.png" Text="Log In" 
+                    Margin="20"
+                    Grid.Row="4"
+                    Command="{Binding GoToSignUpCommand}"/>
+
+                <Label Text="{Binding DisplayErrorMessage} " VerticalOptions="Center" HorizontalOptions="Center"
+                    Grid.Row="5"/>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="6">
+
+                    <Image Source="facebook160.png" 
+                       WidthRequest="50"
+                       HeightRequest="50"/>
+                    <Image Source="github128.png"
+                       WidthRequest="50"
+                       HeightRequest="50"/>
+                    <Image Source="googleplus160.png"
+                       WidthRequest="50"
+                       HeightRequest="50"/>
+                    <Image Source="twittercuadrado96.png"
+                       WidthRequest="50"
+                       HeightRequest="50"/>
+
+
+                </StackLayout>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

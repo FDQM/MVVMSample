@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local ="clr-namespace:MVVMSample"
+             x:Class="MVVMSample.MenuPage"
+            NavigationPage.HasNavigationBar="False">
+  <!--Pages can be added as references or inline-->
+  <ContentPage Title="Home" IconImageSource="Home.png" />
+    <ContentPage Title="Discover" IconImageSource="Location96.png" BackgroundColor="LightGray">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <local:MenuView ButtonText="Bars and Hotels"  
+                    IconImageSource="Drink80.png"    
+                    x:Name="ButtonBars"
+                    Grid.Column="0"
+                    Grid.Row="0">
+                <local:MenuView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Button_Clicked" />
+                </local:MenuView.GestureRecognizers>
+                
+            </local:MenuView>
+
+            <local:MenuView ButtonText="Fine Dinning"  IconImageSource="ic_local_dining.png"                     
+                    x:Name="ButtonDinning"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    Grid.Column="1"
+                    Grid.Row="0">
+                <local:MenuView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1" />
+                </local:MenuView.GestureRecognizers>
+            </local:MenuView>
+
+            <local:MenuView ButtonText="Nearby" IconImageSource="ic_local_cafe.png" 
+                    x:Name="ButtonCafe"
+                      HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                     Grid.Column="0"
+                     Grid.Row="1">
+                <local:MenuView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1" />
+                </local:MenuView.GestureRecognizers>
+            </local:MenuView>
+
+            <local:MenuView ButtonText="Cafes" IconImageSource="ic_add_location.png"  
+                    x:Name="ButtonNearby"
+                     HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    Grid.Column="1"
+                    Grid.Row="1">
+                <local:MenuView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1" />
+                </local:MenuView.GestureRecognizers>
+            </local:MenuView>
+
+            <local:MenuView ButtonText="Fast Foods" IconImageSource="ic_fastfood.png"  
+                    x:Name="ButtonFastfood"
+                     HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    Grid.Column="0"
+                    Grid.Row="2">
+                <local:MenuView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1" />
+                </local:MenuView.GestureRecognizers>
+            </local:MenuView>
+
+            <local:MenuView ButtonText="Featured Foods"  IconImageSource="Pizza50.png" 
+                    x:Name="ButtonFeatured"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    Grid.Column="1"
+                    Grid.Row="2">
+                <local:MenuView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1" />
+                </local:MenuView.GestureRecognizers>
+            </local:MenuView>
+        </Grid>
+
+    </ContentPage>
+  <ContentPage Title="Bookmark" IconImageSource="Bookmark128.png" />
+  <ContentPage Title="Top Foods" IconImageSource="Best64.png" />
+  <ContentPage Title="Profile" IconImageSource="Profile64.png" />
+</TabbedPage>
